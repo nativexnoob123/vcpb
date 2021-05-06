@@ -19,14 +19,14 @@ def message(client, message):
         return
 
     if not is_youtube(message.text):
-        message.reply_text(_("play_1"))
+        message.reply_text(_("This (link) is not valid."))
         return
 
     if "list=" in message.text:
-        message.reply_text(_("play_2"))
+        message.reply_text(_("Send me a video URL, not a playlist."))
         return
 
-    m = message.reply_text(_("play_3"), quote=True)
+    m = message.reply_text(_("Download scheduled."), quote=True)
 
     download(
         message.text,
